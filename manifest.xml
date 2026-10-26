@@ -4,7 +4,7 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xsi:type="MailApp">
   <Id>b7e4c1d2-5a3f-4e9b-8c6d-2f1a9e7b3c50</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>Triangle Cyber, LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="SkillBridge Reply Draft"/>
@@ -92,3 +92,4 @@
     </Resources>
   </VersionOverrides>
 </OfficeApp>
+
