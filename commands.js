@@ -26,9 +26,12 @@ message: message
 }
 
 function createWaitlistReply(event) {
-showError("DIAG: Waitlist command ran");
 try {
-Office.context.mailbox.item.displayReplyForm({ htmlBody: buildBody() });
+Office.context.mailbox.displayNewMessageForm({
+toRecipients: [],
+subject: "SkillBridge Waitlist",
+htmlBody: buildBody()
+});
 } catch (err) {
 console.error(err);
 showError("Waitlist Reply failed: " + err.message);
