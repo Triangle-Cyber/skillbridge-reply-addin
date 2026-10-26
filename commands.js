@@ -26,6 +26,7 @@ message: message
 }
 
 function createWaitlistReply(event) {
+showError("DIAG: Waitlist command ran");
 try {
 Office.context.mailbox.item.displayReplyForm({ htmlBody: buildBody() });
 } catch (err) {
