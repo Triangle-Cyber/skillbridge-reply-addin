@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<style>
+body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; margin: 12px; color: #000; }
+button { background: #0078D4; color: #fff; border: none; padding: 8px 14px; border-radius: 4px; font-size: 11pt; cursor: pointer; margin-bottom: 12px; }
+#status { margin-top: 8px; color: #107C10; min-height: 1em; }
+#preview { border: 1px solid #ccc; padding: 8px; }
+</style>
+</head>
+<body>
+<button id="copyBtn">Copy waitlist text</button>
+<div id="status"></div>
+<div id="preview">
+<p>At the moment, all available SkillBridge slots are filled. We will reopen applications as soon as additional opportunities become available.</p>
+<p>Join our waitlist to be notified when applications reopen.</p>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:16px 0;"><tr><td align="center" bgcolor="#0078D4" style="border-radius:4px;"><a href="https://job-boards.greenhouse.io/trianglecyber/jobs/5384277008" target="_blank" style="display:inline-block;padding:12px 24px;font-family:Calibri,Arial,sans-serif;font-size:11pt;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:4px;">Add to Waitlist</a></td></tr></table>
+</div>
+<p style="color:#555;font-size:9pt">Click "Copy waitlist text", then press Ctrl+V in your reply.</p>
+<script>
+Office.onReady(function () {});
+document.getElementById('copyBtn').addEventListener('click', function () {
+var range = document.createRange();
+range.selectNodeContents(document.getElementById('preview'));
+var sel = window.getSelection();
+sel.removeAllRanges();
+sel.addRange(range);
+var ok = false;
+try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+sel.removeAllRanges();
+document.getElementById('status').textContent = ok ? 'Copied. Paste into your reply with Ctrl+V.' : 'Copy failed. Select the text above and press Ctrl+C.';
+});
+</script>
+</body>
+</html>
